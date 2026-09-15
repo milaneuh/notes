@@ -1,0 +1,1 @@
+You can run `findmnt -T <path>` to know if any [[mount point]] is serving this path. 
