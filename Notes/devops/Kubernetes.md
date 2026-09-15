@@ -16,7 +16,4 @@ This framework provide :
 - [[Horizontal Scaling]]
 - [[IPv6/IPv4 Dual Stack]]
 - [[Extendibility]]
-
-## k8s is not 
-k8s is not : 
-- 
+ 

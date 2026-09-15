@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "99a7b64d54bb4874",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5c50d7198c1fb45c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Kubernetes"
-            }
-          }
-        ]
-      },
-      {
         "id": "0dd88995fe198cf6",
         "type": "tabs",
         "children": [
@@ -31,10 +11,14 @@
             "id": "a4da318a2cc1164e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "devops/Kubernetes Components.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kubernetes Components"
             }
           }
         ]
@@ -110,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "devops/Kubernetes Components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Kubernetes"
+              "title": "Backlinks for Kubernetes Components"
             }
           },
           {
@@ -129,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "devops/Kubernetes Components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Kubernetes"
+              "title": "Outgoing links from Kubernetes Components"
             }
           },
           {
@@ -172,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "devops/Kubernetes Components.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Kubernetes"
+              "title": "Outline of Kubernetes Components"
             }
           }
         ]
@@ -199,9 +183,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "5c50d7198c1fb45c",
+  "active": "a4da318a2cc1164e",
   "lastOpenFiles": [
-    "Kubernetes.md",
+    "devops/Kubernetes Components.md",
+    "devops/Kubernetes.md",
+    "devops",
+    "devops/Pasted image 20260915161050.png",
     "Welcome.md"
   ]
 }
