@@ -1,0 +1,1 @@
+ A disk is a numbered blocks with no notions of names; a filesystem is the format written onto them that invent files, folders and permissions
