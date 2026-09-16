@@ -19,6 +19,8 @@ The order matters. The source code of the application is the **last** place to l
 
 In `systemctl status`, read the exit code before anything else. `code=exited, status=1/FAILURE` means systemd did launch the program and the program exited on its own, so look at the application and its environment. A `203/EXEC` or `200/CHDIR` means systemd could not even launch it, so look at the unit.
 
+See [[systemd exit codes]] for the full triage table.
+
 `Restart=always` turns a startup failure into a loop, so `status` only shows you the last lines of one attempt among many and they scroll. On a looping service, use the journal, not `status`.
 
 After editing the unit, see [[Unit files are cached]].

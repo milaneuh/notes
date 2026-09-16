@@ -7,3 +7,4 @@ It describes how to manage each unit in [[Unit Files]]. A unit is not only a ser
 - [[Unit files are cached]] why editing a unit is not enough
 - [[systemd StateDirectory]] declaring a service state directory instead of chmod
 - [[Diagnosing a systemd service]] the order to follow when it breaks
+- [[systemd exit codes]] who failed, and therefore where to look

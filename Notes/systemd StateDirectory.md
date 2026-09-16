@@ -11,8 +11,6 @@ StateDirectory=aaa/bbb ccc
 ```
 Then the `$STATE_DIRECTORY` variable will be set to "/var/lib/aaa/bbb:/var/lib/ccc"
 
-## What the man page does not tell you
-
 `StateDirectory` takes over an **existing** directory too : it rewrites its owner and its mode at every start. So any `chown` or `chmod` you did by hand on that directory is silently reverted the next time the service starts.
 
 `StateDirectoryMode=` defaults to `0755`, which means `other` can still traverse and list the directory. Set it explicitly if you do not want that, `0750` gives the owner everything and the group read and traverse.
