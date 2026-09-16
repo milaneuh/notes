@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devops/Permissions are checked at open.md",
+                "file": "devops/umask.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Permissions are checked at open"
+              "title": "umask"
             }
           }
         ]
@@ -187,13 +187,13 @@
   },
   "active": "9858605c68f134e9",
   "lastOpenFiles": [
-    "Permissions.md",
+    "devops/Creating a file is writing in the directory.md",
+    "devops/Permissions on a directory.md",
     "devops/Permissions are checked at open.md",
+    "Permissions.md",
     "devops/umask.md",
     "devops/root is not a permission class.md",
     "devops/File ownership.md",
-    "devops/Permissions on a directory.md",
-    "devops/Creating a file is writing in the directory.md",
     "devops/iPXE.md",
     "devops/Know if any mount is serving a path.md",
     "devops/mount point.md",

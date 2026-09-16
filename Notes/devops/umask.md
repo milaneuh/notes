@@ -23,12 +23,12 @@ key tools       0600
 
 The four masks worth memorising :
 
-| umask | meaning | file from 0666 | dir from 0777 |
-| --- | --- | --- | --- |
-| 022 | the default, everyone reads | 0644 | 0755 |
-| 027 | group reads, other nothing | 0640 | 0750 |
-| 007 | group reads and writes | 0660 | 0770 |
-| 077 | owner only | 0600 | 0700 |
+| umask | meaning                     | file from 0666 | dir from 0777 |
+| ----- | --------------------------- | -------------- | ------------- |
+| 022   | the default, everyone reads | 0644           | 0755          |
+| 027   | group reads, other nothing  | 0640           | 0750          |
+| 007   | group reads and writes      | 0660           | 0770          |
+| 077   | owner only                  | 0600           | 0700          |
 
 Trap : "the mask is 7 minus what I want" is wrong. It only works for directories, because they are requested at `0777`.
 
