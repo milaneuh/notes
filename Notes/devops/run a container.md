@@ -1,2 +1,5 @@
 to run a [[Containers|container]] using [[Docker|docker]] you use docker run, the command has this anatomy : 
 `docker run --OPTIONS <images> <command>` 
+## Cards
+Q: what is the anatomy of a `docker run` command?
+A: `docker run --OPTIONS <image> <command>`

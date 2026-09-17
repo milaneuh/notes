@@ -42,3 +42,22 @@ sudo -u <service-user> <command>
 ```
 
 That last one is what reveals a latent failure : a service that still answers proves nothing, see [[Permissions are checked at open]].
+
+## Cards
+Q: what is the order of commands when diagnosing a systemd service?
+A: `systemctl status <service>`, then `journalctl -u <service>`, then `systemctl cat <service>` for the effective unit with drop-ins, then `systemctl show <service>` for the resolved properties.
+
+Q: where is the last place to look when a systemd service fails?
+A: the source code of the application. If the process started and exited by itself, it had time to say something, and it said it in the journal.
+
+Q: what do you read first in `systemctl status`?
+A: the exit code. It tells you whether systemd failed to launch the program, or the program launched and exited on its own.
+
+Q: why does `systemctl status` become useless on a service with `Restart=always`?
+A: the startup failure turns into a loop, so `status` only shows the last lines of one attempt among many, and they scroll. Use the journal instead.
+
+Q: `systemctl cat` vs `systemctl show` — what is the difference?
+A: `cat` shows the effective unit file with drop-ins included; `show` shows the resolved properties, which is not the same thing.
+
+Q: how do you check that a service can actually use a directory?
+A: test under the identity the service runs as, not yours: `sudo -u <service-user> <command>`. And check the directory itself with `ls -ld`, since creating a file is a write to the directory.

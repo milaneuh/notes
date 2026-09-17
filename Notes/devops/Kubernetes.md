@@ -17,3 +17,9 @@ This framework provide :
 - [[IPv6/IPv4 Dual Stack]]
 - [[Extendibility]]
  
+## Cards
+Q: what problem does Kubernetes answer?
+A: containers bundle and run applications well, but managing them stays manual — if a container goes down you restart it yourself. k8s automates that and gives a framework for managing containerized workloads.
+
+Q: name the capabilities the Kubernetes framework provides.
+A: service discovery and load balancing, storage orchestration, automated rollouts and rollbacks, automated bin packing, self-healing, secrets and configuration management, batch execution, horizontal scaling, IPv6/IPv4 dual stack, extendibility.

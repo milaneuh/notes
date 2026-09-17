@@ -10,3 +10,16 @@ This says nothing about the **directory** that contains them. A service director
 Exception to remember : if the directory has the setgid bit, new entries inherit the group of the directory instead of the group of the process.
 
 See [[Permissions on a directory]], [[root is not a permission class]], [[systemd StateDirectory]]
+
+## Cards
+Q: who owns a newly created file?
+A: the identity of the process that created it, more precisely its effective UID. Not whoever owns the directory.
+
+Q: why prefer `root:svcgroup 0770` over `svcuser:svcgroup 0750` for a service state directory?
+A: the service can write inside but cannot `chmod` the directory to widen access, because that requires owning it. If the service owns it, a compromised service can widen it itself.
+
+Q: what does the setgid bit on a directory change about ownership?
+A: new entries inherit the group of the directory instead of the group of the creating process.
+
+Q: can the data files of a service running as `svcuser` be owned by `root`?
+A: no — they are owned by the effective UID of the process that writes them. Only the containing directory can be owned by root.
