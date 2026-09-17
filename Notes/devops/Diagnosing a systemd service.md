@@ -43,6 +43,17 @@ sudo -u <service-user> <command>
 
 That last one is what reveals a latent failure : a service that still answers proves nothing, see [[Permissions are checked at open]].
 
+## If the error says no space left on device
+
+Do not look at the file, ask the **filesystem**, and per mount point :
+
+```bash
+df -h <path>                      # which filesystem, and how full
+du -sh <mount point>              # how much the visible files actually use
+```
+
+If `df` and `du` disagree, the missing space is held by files that have no name any more. See [[df vs du]] and [[Deleted but still open files]].
+
 ## Cards
 Q: what is the order of commands when diagnosing a systemd service?
 A: `systemctl status <service>`, then `journalctl -u <service>`, then `systemctl cat <service>` for the effective unit with drop-ins, then `systemctl show <service>` for the resolved properties.
@@ -58,6 +69,9 @@ A: the startup failure turns into a loop, so `status` only shows the last lines 
 
 Q: `systemctl cat` vs `systemctl show` — what is the difference?
 A: `cat` shows the effective unit file with drop-ins included; `show` shows the resolved properties, which is not the same thing.
+
+Q: the service says "no space left on device", where do you look?
+A: `df -h <path>` to know which filesystem and how full, then `du -sh` on the mount point. If they disagree, the space is held by deleted files that are still open.
 
 Q: how do you check that a service can actually use a directory?
 A: test under the identity the service runs as, not yours: `sudo -u <service-user> <command>`. And check the directory itself with `ls -ld`, since creating a file is a write to the directory.
