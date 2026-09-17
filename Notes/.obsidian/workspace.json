@@ -11,10 +11,14 @@
             "id": "effc29dbf079ce16",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "devops/Permissions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Permissions"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "devops/Permissions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Permissions"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "devops/Permissions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Permissions"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "devops/Permissions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Permissions"
             }
           }
         ]
@@ -178,9 +185,18 @@
   },
   "active": "effc29dbf079ce16",
   "lastOpenFiles": [
+    "devops/Permissions are checked at open.md",
+    "devops/Permissions.md",
+    "devops/mount table.md",
+    "devops/Kubernetes Objects.md",
+    "devops/mount point.md",
+    "devops/Creating a file is writing in the directory.md",
+    "devops/disk vs filesystem.md",
+    "devops/Cluster Level Logging.md",
+    "devops/Check if what are the volumes mounts present in the running container.md",
+    "devops/cgroups.md",
     "devops/Pods.md",
     "devops/Kubernetes Components.md",
-    "devops/cgroups.md",
     "devops/Kubernetes.md",
     "Untitled.md",
     "devops/Untitled.canvas",
@@ -195,17 +211,8 @@
     "KBRW/Hotfix d'un module en live (IEX).md",
     "devops/Unit Files.md",
     "devops/2026-09-16.md",
-    "devops/Check if what are the volumes mounts present in the running container.md",
     "KBRW/Rechercher et récupérer une commande (IEX).md",
-    "KBRW/Recalcul et appel ETA (IEX).md",
-    "KBRW/Lookup annulation CSPS - SAP et poste.md",
-    "KBRW/PSA Supply - Debug IEX (index).md",
-    "devops/systemd exit codes.md",
-    "KBRW/Debug IEX - commandes fréquentes.md",
     "KBRW",
-    "devops/systemd.md",
-    "devops/Check if the volume mount is present in the running container.md",
-    "devops/systemd StateDirectory.md",
     "Untitled.canvas",
     "devops",
     "devops/Pasted image 20260915161050.png"

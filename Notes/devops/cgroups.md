@@ -16,3 +16,25 @@ It depends on the ressource :
 While powerful, managing control groups manually means writing raw numbers and process ids directly into the hidden system files under `/sys/fs/cgroup/`. It is tedious, complex and hard to maintain.
 
 This is one of the problems [[Docker]] solves : through the docker api you configure the boundaries of the [[Containers|container]] and the Docker runtime handles the creation of the cgroups and namespaces for you.
+
+## Cards
+Q: what do control groups do?
+A: they limit, account and prioritise the ressources (cpu, memory, io) a group of processes can consume.
+
+Q: what is the difference between cgroups and namespaces?
+A: namespaces decide **what a process can see** (isolation), cgroups decide **how much it can use** (limitation).
+
+Q: what problem do control groups answer?
+A: in a traditional operating system a buggy application that starts infinite looping can consume 100% of the cpu and freeze the entire machine. cgroups stop one faulty process from starving the rest of the system.
+
+Q: what happens when a cgroup exceeds its memory limit?
+A: the process is killed by the OOM killer (in Kubernetes, `OOMKilled`).
+
+Q: what happens when a cgroup exceeds its cpu limit?
+A: it is **throttled**, not killed. It gets fewer cpu cycles per period and runs slower.
+
+Q: why was managing cgroups by hand painful?
+A: you write raw numbers and process ids directly into the hidden system files under `/sys/fs/cgroup/`. Tedious, complex and hard to maintain.
+
+Q: what was Docker's main contribution, if not automating cgroups?
+A: the layered **image format** and its **distribution through a registry**, which made containers portable. The cgroup and namespace setup was originally delegated to LXC.
