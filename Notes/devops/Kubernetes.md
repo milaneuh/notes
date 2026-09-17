@@ -1,7 +1,13 @@
 Open source platform to manage containerized workloads. 
+
 Kubernetes is built on top of [[linux]] and relies on linux API for it's basic functionalities, such as [[disk vs filesystem|filesystem]], networking and storage. In short, k8s provide a standard and consistent interface for managing linux based infrastructures. 
 
+It is not necessarily creating new concepts or technologies, but more so connecting already existing concepts together to facilitate the exploitation of the infrastructure.
+
+It is recommended to learn the linux fundamentals before learning Kubernetes because it will make debugging and understanding the concepts much easier.  
 ## The problems k8s answers 
+> 50% of infrastructure cost is plumbing
+
 [[Containers]] are a good way to bundle and run applications, however the management of these containers is still a manuel process. For example, if a container goes down, you have to manually restart it. 
 
 K8s allows you to automate theses things and provides a framework to facilitate the managements of a containerized workloads. 
@@ -18,7 +24,7 @@ This framework provide :
 - [[IPv6/IPv4 Dual Stack]]
 - [[Extendibility]]
  
-See [[Origins of Kubernetes]]
+See [[Origins of Kubernetes]], [[Pods]]
 
 ## Cards
 Q: what problem does Kubernetes answer?
