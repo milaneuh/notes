@@ -24,3 +24,19 @@ WantedBy=timers.target
 
 See :
 - [[Timers vs cron]]
+
+## Cards
+Q: what is a systemd timer?
+A: a unit whose name ends in .timer, with a `[Timer]` section, that controls a .service file or event. Same file structure and same paths as any other unit.
+
+Q: what are the two types of systemd timer?
+A: realtime timers, activated on a calendar event with `OnCalendar=`, and monotonic timers, activated after a time span relative to a varying starting point, with options of the form `OnTypeSec=`.
+
+Q: give two monotonic timer options.
+A: `OnBootSec` and `OnUnitActiveSec`.
+
+Q: you have a .timer and its matching .service. Which one do you enable?
+A: the timer. The .service does not need an `[Install]` section, because it is the timer unit that gets enabled.
+
+Q: what happens to a monotonic timer if the machine is suspended or shut down?
+A: it stops.

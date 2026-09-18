@@ -6,3 +6,10 @@ Beware of any source that says "by default" without saying on what.
 
 See : 
 - [[Timers vs cron]]
+
+## Cards
+Q: what is cron?
+A: the time-based job scheduler in linux. It runs commands or shell scripts periodically at certain times.
+
+Q: is a cron implementation installed by default?
+A: it depends on the distribution. On Debian and Ubuntu `cron` is there out of the box, on Arch none of them are and the base system relies on systemd timers.

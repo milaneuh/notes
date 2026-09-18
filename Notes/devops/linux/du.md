@@ -15,3 +15,10 @@ Output :
 ```
 
 See [[df vs du]]
+
+## Cards
+Q: what does du show?
+A: the disk usage of the directories and files inside a path, by walking the tree one entry at a time.
+
+Q: `du -h` on a directory does not list the files inside it. Why?
+A: without `-a`, du only reports directories. `-a` is what makes it list the files too.
