@@ -1,8 +1,9 @@
 Index of the linux notes 
 
-Core :
+Architecture :
 - [[FHS]]
 
 Commands : 
-- [[lsof]]
-- [[runuser]]
+- [[lsof]] # Retrieve informations on opened files 
+- [[runuser]] # Execute a command as another user
+- [[df]] # Retrieve informations on available disk space
