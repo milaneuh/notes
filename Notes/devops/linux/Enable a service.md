@@ -14,7 +14,7 @@ ls -l /etc/systemd/system/multi-user.target.wants/
 
 The targets of those symlinks also show the split : the packaged units point to `/usr/lib/systemd/system/`, yours point to `/etc/systemd/system/`. The distribution provides the definition, the administrator takes the decision to enable it.
 
-See [[Active vs Enabled services]]
+See [[Active vs Enabled service]]
 
 ## Cards
 Q: what does `systemctl enable <service>` actually do?
