@@ -2,10 +2,10 @@ The du (disk usage) command shows the disk usage within directories and files in
 
 Example : 
 ```bash
-	du -h /home/example-directory
+	du -ah /home/example-directory
 ```
 
-The -h options here is to display the size in a human readable format. 
+The -h options here is to display the size in a human readable format. The `-a` is what makes it list the **files** too : without it, du only reports directories. 
 
 Output :
 ```
