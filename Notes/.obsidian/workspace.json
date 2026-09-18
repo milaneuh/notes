@@ -11,10 +11,14 @@
             "id": "30d4deb1022b87d8",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "devops/linux/hardlink.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "hardlink"
             }
           }
         ]
@@ -183,6 +187,16 @@
   },
   "active": "30d4deb1022b87d8",
   "lastOpenFiles": [
+    "Find files linked to an inode.md",
+    "a file is not it's name.md",
+    "devops/linux/Find files linked to an inode.md",
+    "devops/linux/hardlink limits.md",
+    "devops/linux/a file is not it's name.md",
+    "devops/linux/symlinks.md",
+    "symlinks.md",
+    "devops/linux/hardlink.md",
+    "hardlink limits.md",
+    "devops/Find a virtual machine using lima.md",
     "devops/linux/systemd Timers.md",
     "devops/linux/Timers vs cron.md",
     "devops/linux/cron.md",
@@ -199,18 +213,8 @@
     "devops/linux/df vs du.md",
     "devops/linux/du.md",
     "devops/linux/df.md",
-    "Lima.md",
-    "devops/linux/Shadowing.md",
     "devops/k8s",
-    "devops/iPXE.md",
-    "devops/linux/lsof.md",
     "devops/linux",
-    "devops/linux/Permissions on a directory.md",
-    "devops/linux/Permissions.md",
-    "devops/linux/Diagnosing a systemd service.md",
-    "devops/linux/FHS.md",
-    "devops/linux/runuser.md",
-    "devops/linux/systemd exit codes.md",
     "Untitled.canvas",
     "devops/k8s/Pasted image 20260915161050.png",
     "devops"
