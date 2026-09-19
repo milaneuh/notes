@@ -24,7 +24,7 @@ This framework provide :
 - [[IPv6/IPv4 Dual Stack]]
 - [[Extendibility]]
  
-See [[Origins of Kubernetes]], [[Pods]]
+See [[Origins of Kubernetes]], [[Pods]], [[Kubernetes Components]]
 
 ## Cards
 Q: what problem does Kubernetes answer?

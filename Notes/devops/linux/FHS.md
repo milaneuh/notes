@@ -1,4 +1,4 @@
-The Filesystem Hierarchy Standard or FHS defines the arborescence and the content of the main directories of the [[File System]] in a Linux system.
+**The** Filesystem Hierarchy Standard or FHS defines the arborescence and the content of the main directories of the [[File System]] in a Linux system.
 
 The arborescence is :
 

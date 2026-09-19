@@ -4,21 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "f7cd752e1f01775d",
+        "id": "b630b1703716001d",
         "type": "tabs",
         "children": [
           {
-            "id": "30d4deb1022b87d8",
+            "id": "6ca7a57d8dcb82be",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "8dec0ab05312aa6c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devops/linux/hardlink.md",
+                "file": "devops/linux/Name Service Switch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hardlink"
+              "title": "Name Service Switch"
             }
           }
         ]
@@ -55,7 +65,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Active vs Enabled services",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,34 +195,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "30d4deb1022b87d8",
+  "active": "6ca7a57d8dcb82be",
   "lastOpenFiles": [
-    "Find files linked to an inode.md",
-    "a file is not it's name.md",
-    "devops/linux/Find files linked to an inode.md",
-    "devops/linux/hardlink limits.md",
+    "devops/linux/dmesg.md",
+    "devops/linux/cgroups.md",
+    "devops/linux/nftables.md",
+    "devops/k8s/Kubernetes Components.md",
+    "devops/k8s/Kubernetes.md",
+    "devops/linux/mount point.md",
+    "devops/linux/df vs du.md",
+    "devops/linux/a name is not an address.md",
+    "devops/linux/listing address.md",
+    "devops/linux/loopback.md",
+    "devops/linux/linux.md",
+    "devops/linux/Name Service Switch.md",
+    "devops/linux/name resolution.md",
     "devops/linux/a file is not it's name.md",
-    "devops/linux/symlinks.md",
-    "symlinks.md",
-    "devops/linux/hardlink.md",
-    "hardlink limits.md",
+    "devops/linux/kernel ring buffer.md",
     "devops/Find a virtual machine using lima.md",
-    "devops/linux/systemd Timers.md",
+    "devops/linux/strace.md",
+    "devops/linux/ss.md",
+    "devops/linux/Active vs Enabled service.md",
+    "devops/linux/Diagnosing a systemd service.md",
+    "devops/linux/FHS.md",
+    "devops/linux/lsof.md",
     "devops/linux/Timers vs cron.md",
     "devops/linux/cron.md",
-    "devops/linux/systemd.md",
-    "devops/linux/cgroups.md",
-    "devops/linux/Unit Files.md",
-    "devops/linux/linux.md",
-    "Active vs Enabled services.md",
-    "devops/linux/Active vs Enabled service.md",
-    "devops/linux/systemd Type.md",
-    "cronjobs.md",
-    "devops/linux/Enable a service.md",
-    "devops/linux/systemd StateDirectory.md",
-    "devops/linux/df vs du.md",
-    "devops/linux/du.md",
-    "devops/linux/df.md",
+    "devops/linux/hardlink.md",
+    "Find files linked to an inode.md",
     "devops/k8s",
     "devops/linux",
     "Untitled.canvas",
