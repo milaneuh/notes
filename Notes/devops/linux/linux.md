@@ -4,13 +4,13 @@ Architecture :
 - [[FHS]]
 
 Tooling : 
-- [[lsof]] # Retrieve informations on opened files 
+- [[lsof]] # Retrieve information on opened files
 - [[runuser]] # Execute a command as another user
-- [[df]] # Retrieve informations on available disk space
-- [[du]] # Retrieve informations on disk usage per directory
-- [[ss]] # Retrieve informations on network sockets 
+- [[df]] # Retrieve information on available disk space
+- [[du]] # Retrieve information on disk usage per directory
+- [[ss]] # Retrieve information on network sockets
 - [[strace]] # Trace and intercepts syscalls
-- [[dmesg]] # Retrieve informations regarding the kernel ring buffer
+- [[dmesg]] # Retrieve information regarding the kernel ring buffer
 
 Concepts :
 - [[df vs du]] # why the two disagree, and what it tells you

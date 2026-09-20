@@ -1,10 +1,10 @@
-strace is a tool for monitoring and diagnosing proccesses in linux. It provides insights on how a program intereacts witht he system, especially when the source code is not available.
+strace is a tool for monitoring and diagnosing processes in linux. It provides insights on how a program interacts with the system, especially when the source code is not available.
 
-Here is a few example that I used during my troubleshooting exercises :
+Here are a few examples that I used during my troubleshooting exercises :
 
 ## trace network related system calls and log to file
 ```bash
-strace -e -f trace=network -o /tmp/net_trace.log -p <PID> 
+strace -f -e trace=network -o /tmp/net_trace.log -p <PID>
 ```
 
 ## trace the system calls of a specific process
@@ -17,7 +17,7 @@ strace -p <PID>
 sudo strace -f -e openat -s 256 -p $(pgrep myapp) 2>&1 | grep -v "^Process"
 ```
 
-## watch why a script does before it crashes
+## watch what a script does before it crashes
 ```bash
 strace -o /tmp/crash_trace.log ./flaky_command && echo "OK" || echo "FAILED"
 ```
@@ -26,3 +26,13 @@ strace -o /tmp/crash_trace.log ./flaky_command && echo "OK" || echo "FAILED"
 ```bash
 strace -c command_here
 ```
+
+## Cards
+Q: what does strace show?
+A: the system calls a process makes, which is useful when the source is not available and the logs say nothing.
+
+Q: which invocation gives a summary instead of a stream?
+A: `strace -c`, which counts the calls and the time spent per system call.
+
+Q: what is the risk of running strace on a service at rest?
+A: reading normal idle behaviour, a poll in timeout for instance, as a symptom. Without a hypothesis the instrument only produces noise.
