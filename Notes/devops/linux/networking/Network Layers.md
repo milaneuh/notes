@@ -8,7 +8,7 @@ Defines the data transmission of the application layer. This layer includes data
 
 In [[linux]], the transport layer and the layers below it are primarily handled by the linux kernel. But there are exceptions where transport packets are sent to the user space (application layer) for processing.
 
-3) Network layer
+3) [[Network layer]]
 Defines how packets from host A can go to host B. The packet transit rule for the internet is called the internet protocol (IP).
 
 4) Physical layer

@@ -4,51 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "0dd88995fe198cf6",
+        "id": "17eaed81950590b8",
         "type": "tabs",
         "children": [
           {
-            "id": "effc29dbf079ce16",
+            "id": "61e13a6f36503f0c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KBRW/Intégrer manuellement un fichier CSPS BO (préprod).md",
+                "file": "devops/linux/networking/name resolution.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Intégrer manuellement un fichier CSPS BO (préprod)"
+              "title": "name resolution"
             }
           },
           {
-            "id": "cf04040b54dbbbb5",
+            "id": "836095750c191cc9",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.13.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.7"
-            }
-          },
-          {
-            "id": "6c0bd8f1b2ad4a58",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "devops/linux/linux.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "linux"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -69,7 +52,7 @@
               "state": {
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
@@ -82,7 +65,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "service",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -123,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "KBRW/Intégrer manuellement un fichier CSPS BO (préprod).md",
+                "file": "devops/Kubernetes Components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +116,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Intégrer manuellement un fichier CSPS BO (préprod)"
+              "title": "Backlinks for Kubernetes Components"
             }
           },
           {
@@ -142,12 +125,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "KBRW/Intégrer manuellement un fichier CSPS BO (préprod).md",
+                "file": "devops/Kubernetes Components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Intégrer manuellement un fichier CSPS BO (préprod)"
+              "title": "Outgoing links from Kubernetes Components"
             }
           },
           {
@@ -185,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "KBRW/Intégrer manuellement un fichier CSPS BO (préprod).md",
+                "file": "devops/Kubernetes Components.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Intégrer manuellement un fichier CSPS BO (préprod)"
+              "title": "Outline of Kubernetes Components"
             }
           }
         ]
@@ -212,41 +195,42 @@
       "bases:Create new base": false
     }
   },
-  "active": "6c0bd8f1b2ad4a58",
+  "active": "61e13a6f36503f0c",
   "lastOpenFiles": [
-    "devops/linux/Network Layers.md",
-    "KBRW/Events FSM utiles (IEX).md",
-    "KBRW/Scanner les fichiers CSPS BO (xf_pp_backup).md",
-    "KBRW/Export KPI VOR - alignement sur le BO (alternatives).md",
-    "devops/linux/xargs.md",
-    "devops/linux/symlinks.md",
-    "devops/linux/strace.md",
-    "devops/linux/ss.md",
-    "devops/linux/sed.md",
-    "devops/linux/nftables.md",
-    "devops/linux/name resolution.md",
-    "devops/linux/loopback.md",
-    "devops/linux/listening address.md",
+    "devops/linux/networking/listening address.md",
+    "devops/linux/systemd/Routes and Routing Tables.md",
+    "devops/linux/networking/subnets.md",
+    "devops/linux/networking/Network layer.md",
+    "devops/linux/tooling/df vs du.md",
+    "ARG_MAX.md",
+    "devops/linux/networking/Network Layers.md",
+    "devops/linux/linux.md",
+    "devops/linux/cgroups.md",
+    "devops/linux/tooling/ss.md",
+    "devops/linux/tooling/dmesg.md",
+    "devops/linux/tooling/awk.md",
     "devops/linux/kernel ring buffer.md",
-    "devops/linux/hardlink.md",
-    "devops/linux/hardlink limits.md",
-    "devops/linux/dmesg.md",
-    "devops/linux/awk.md",
-    "devops/linux/a name is not an address.md",
-    "devops/linux/a file is not it's name.md",
-    "devops/linux/Name Service Switch.md",
-    "devops/linux/Find files linked to an inode.md",
-    "KBRW/Hotfix d'un module en live (IEX).md",
-    "KBRW/Lookup annulation CSPS - SAP et poste.md",
-    "KBRW/Rappels métier - statuts Supply CSPS.md",
-    "KBRW/Recalcul et appel ETA (IEX).md",
-    "devops/linux",
-    "devops/k8s/Pasted image 20260915161050.png",
+    "devops/linux/file system/umask.md",
+    "devops/linux/systemd/Unit Files.md",
+    "devops/linux/systemd/systemd StateDirectory.md",
+    "devops/linux/tooling/strace.md",
+    "devops/linux/networking/Name Service Switch.md",
+    "devops/linux/networking/name resolution.md",
+    "devops/linux/file system/mount table.md",
+    "devops/linux/file system/FHS.md",
+    "devops/linux/systemd",
+    "devops/linux/file system",
+    "devops/linux/tooling",
+    "devops/linux/networking",
+    "devops/linux/tooling/xargs.md",
+    "devops/linux/tooling/sed.md",
+    "devops/linux/systemd/Diagnosing a systemd service.md",
+    "devops/linux/file system/Permissions on a directory.md",
+    "devops/linux/file system/File ownership.md",
     "devops/k8s",
-    "devops/Untitled.canvas",
-    "KBRW",
+    "devops/linux",
     "Untitled.canvas",
-    "devops",
-    "devops/Pasted image 20260915161050.png"
+    "devops/k8s/Pasted image 20260915161050.png",
+    "devops"
   ]
 }
