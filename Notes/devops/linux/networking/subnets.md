@@ -38,3 +38,15 @@ A: `255.255.255.192`.
 
 Q: why can an octet of a subnet mask never be 210?
 A: a mask is a continuous run of 1 bits followed by a continuous run of 0 bits. 210 is `11010010`, which breaks the run. Only 0, 128, 192, 224, 240, 248, 252, 254 and 255 are legal.
+
+Q: someone writes `255.192.255.0` as a subnet mask. What is wrong with it?
+A: a mask is a continuous run of 1 bits followed by a continuous run of 0 bits. Once a 0 bit appears you cannot go back to 1, so this one is not a mask at all.
+
+Q: two hosts are configured as `192.168.104.10/24` and `192.168.105.10/24`. Same subnet?
+A: no. A `/24` fixes the first three octets, and 104 is not 105. They need a router to reach each other.
+
+Q: you are told a subnet holds 256 addresses. What prefix length is it?
+A: `/24`. 32 bits total minus 8 bits left free for hosts.
+
+Q: a machine has the address `192.168.104.9` and the mask `255.255.255.0`. Write the subnet it belongs to.
+A: `192.168.104.0/24`.

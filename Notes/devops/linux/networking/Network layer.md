@@ -48,3 +48,12 @@ A: `inet`. IPv6 addresses are marked `inet6`.
 
 Q: in `inet 192.168.104.1/24`, what does the `/24` tell you?
 A: the subnet the address belongs to.
+
+Q: `ip addr show` prints an `inet6 fe80::...` line and no `inet` line for an interface. What do you know?
+A: the interface holds no IPv4 address, only an IPv6 link local one.
+
+Q: a host shows three IP addresses. What does that tell you about its connectivity?
+A: it is most likely attached to several subnets, since a host holds at least one address per subnet it is connected to.
+
+Q: you read `10.23.2.37` in a configuration file. Which version of IP, and how do you know?
+A: IPv4. It is a dotted-quad sequence, four numbers in the `a.b.c.d` form.

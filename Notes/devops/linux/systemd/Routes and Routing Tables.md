@@ -62,3 +62,18 @@ A: the destination sits on the directly attached network, so it is reachable wit
 
 Q: what does `via` on a route mean, compared to `scope link`?
 A: `via` names the gateway the packet is handed to. `scope link` means the host reaches the destination itself.
+
+Q: `ip route show` prints only `192.168.104.0/24 dev eth0 scope link`, with no `default` line. What still works and what is broken?
+A: the local subnet is still reachable directly. Anything outside of it has no route at all, so the host cannot leave its own subnet.
+
+Q: a route reads `192.168.104.2 dev eth0 scope link`. Does the packet go through a gateway?
+A: no. `scope link` means the destination sits on the directly attached network and the host reaches it itself.
+
+Q: two routes lead to the same destination, one with `metric 100` and one with `metric 200`. Which one does the kernel use?
+A: the one with `metric 100`. The lowest weight wins.
+
+Q: a machine holds an address in two different subnets. What role can it play?
+A: it can connect the two subnets, since connecting subnets means passing data through a host attached to more than one.
+
+Q: your host reaches everything on its own subnet but nothing outside, and the routing table does contain a `default` line. What do you look at next?
+A: the gateway named by that `default` line. The route exists, so the question moves to whether that gateway is reachable and whether it forwards.

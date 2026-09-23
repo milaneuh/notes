@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devops/linux/networking/name resolution.md",
+                "file": "devops/linux/networking/nftables.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "name resolution"
+              "title": "nftables"
             }
           },
           {
@@ -197,13 +197,15 @@
   },
   "active": "61e13a6f36503f0c",
   "lastOpenFiles": [
+    "devops/linux/networking/subnets.md",
+    "devops/linux/networking/Name Service Switch.md",
+    "devops/linux/networking/Network layer.md",
+    "devops/linux/networking/Network Layers.md",
+    "devops/linux/networking/name resolution.md",
     "devops/linux/networking/listening address.md",
     "devops/linux/systemd/Routes and Routing Tables.md",
-    "devops/linux/networking/subnets.md",
-    "devops/linux/networking/Network layer.md",
     "devops/linux/tooling/df vs du.md",
     "ARG_MAX.md",
-    "devops/linux/networking/Network Layers.md",
     "devops/linux/linux.md",
     "devops/linux/cgroups.md",
     "devops/linux/tooling/ss.md",
@@ -214,8 +216,6 @@
     "devops/linux/systemd/Unit Files.md",
     "devops/linux/systemd/systemd StateDirectory.md",
     "devops/linux/tooling/strace.md",
-    "devops/linux/networking/Name Service Switch.md",
-    "devops/linux/networking/name resolution.md",
     "devops/linux/file system/mount table.md",
     "devops/linux/file system/FHS.md",
     "devops/linux/systemd",

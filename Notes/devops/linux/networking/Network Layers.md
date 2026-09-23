@@ -40,3 +40,15 @@ A: the transport layer and everything below it, with exceptions where transport 
 
 Q: why aren't the network layers completely closed off from each other?
 A: because it's sometimes more efficient to process them simultaneously — e.g. devices working at the physical layer can look at the transport and network layers to filter and route data more quickly.
+
+Q: two machines ping each other, but your application cannot connect. Which layers can you rule out?
+A: the network layer and everything below it work, since the packets reach the other host. The problem sits in the transport layer or in the application layer.
+
+Q: a capture shows a source port and a destination port. Which layer does that information belong to?
+A: the transport layer. Ports are how it separates the conversations of several applications on the same host.
+
+Q: you swap the cable and the problem disappears. Which layer was at fault?
+A: the physical layer.
+
+Q: a router in the middle of the path drops your packets based on the destination port. Which layers is it reading, and why is that surprising?
+A: it reads the network layer to route and the transport layer to see the port. The layers are not fully closed off from each other, a device can look above its own layer when it is more efficient.
