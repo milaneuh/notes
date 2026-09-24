@@ -25,14 +25,10 @@
             "id": "c06f0685cd19dfe1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "devops/linux/networking/Physical layer.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Physical layer"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           },
           {
@@ -94,7 +90,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "service",
+                "query": "etc/hosts",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -115,7 +111,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -226,16 +223,16 @@
   },
   "active": "c06f0685cd19dfe1",
   "lastOpenFiles": [
+    "devops/linux/networking/name resolution.md",
+    "devops/linux/networking/Physical layer.md",
     "devops/linux/networking/Network Layers.md",
     "devops/linux/networking/How the kernel chooses a route.md",
-    "devops/linux/networking/Physical layer.md",
     "Physical layer.md",
     "devops/linux/networking/Network layer.md",
     "devops/linux/networking/subnets.md",
     "devops/linux/systemd/Routes and Routing Tables.md",
     "devops/linux/networking/nftables.md",
     "devops/linux/networking/Name Service Switch.md",
-    "devops/linux/networking/name resolution.md",
     "devops/linux/networking/listening address.md",
     "devops/linux/tooling/df vs du.md",
     "ARG_MAX.md",

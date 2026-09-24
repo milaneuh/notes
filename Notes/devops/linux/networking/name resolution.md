@@ -4,6 +4,12 @@ Two things matter more than the stack itself. The order is declared, not univers
 
 A failed resolution is not always immediate either. An unreachable DNS server makes it hang for several seconds, so a slow failure does not point at a firewall by itself.
 
+The resolution process typically unfolds like this (simplified):
+1. The application calls a function to look up the ip address behind a hostname. This function is in the system's shared library, so the application does not need to know the details of how it works. 
+2. When the function in the shared library runs, it acts according to a set of rules found in the [[Name Service Switch]] to determine a plan of action on lookups. 
+3. When the function decides to use DNS for the name lookup, it consults an additional configuration file to find a DNS name server. the name server is given as an IP address. 
+4. The function sends a DNS lookup request (over the network) to the name server.
+5. The name server replies with the IP address for the hostname and the function returns this IP address to the applications. 
 ## Configuration files
 
 - `/etc/hosts` : Static local ip-to-hostname mapping checked first by the system
