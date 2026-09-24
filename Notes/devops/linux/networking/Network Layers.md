@@ -11,7 +11,7 @@ In [[linux]], the transport layer and the layers below it are primarily handled 
 3) [[Network layer]]
 Defines how packets from host A can go to host B. The packet transit rule for the internet is called the internet protocol (IP).
 
-4) Physical layer
+4) [[Physical layer]]
 Defines how to send raw data across a physical medium, such as Ethernet or modem
 
 > [!info] Another way to describe the network layers is the 7-layer OSI model. But since I will primarily be working with the 4 layers seen above, I will not study it for now (Sept 2026).
