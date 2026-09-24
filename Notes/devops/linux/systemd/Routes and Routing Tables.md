@@ -34,7 +34,7 @@ To summarise :
 2. `192.168.104.0/24 dev eth0 proto kernel scope link` The subnet local link. 
 3. `192.168.104.2 dev eth0 proto dhcp scope link` An host route to the gateway itself and the DHCP client added it. 
 
-
+See [[How the kernel chooses a route]]
 ## Cards
 Q: how do you connect two subnets?
 A: by sending data through a host that is connected to more than one subnet.
