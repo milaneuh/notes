@@ -3,7 +3,7 @@
 1) Application Layer
 Contains the "language" applications and servers use to communicate. Usually a high level protocol such as HTTP, TLS or FTP. Application layer protocols can often be combined. For example, TLS combined with HTTP makes HTTPS
 
-2) Transport Layer
+2) [[Transport Layer]]
 Defines the data transmission of the application layer. This layer includes data integrity checks, source and destination ports and specs for breaking application data into packets at the host side. TCP and UDP are the most common layer protocols. The transport layer is sometimes called the protocol layer.
 
 In [[linux]], the transport layer and the layers below it are primarily handled by the linux kernel. But there are exceptions where transport packets are sent to the user space (application layer) for processing.

@@ -1,0 +1,1 @@
+TCP provides for multiple network applications by using networks _ports_, which are just numbers linked to an IP address. When using this protocol, the applications opens a connection between this port and it's own machine. b 

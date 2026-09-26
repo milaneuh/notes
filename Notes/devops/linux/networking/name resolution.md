@@ -20,6 +20,7 @@ The resolution process typically unfolds like this (simplified):
 - `getent hosts` : Resolves a name through the same chain as the application
 - `resolvectl` : Manages and diagnoses `systemd-resolved` caches and statuses 
 - `dig` : Queries DNS name servers directly to test records.
+it does not go through the NSS and on a mchine that with `systemd-resolved` it's default provider is the stub, which read the `/etc/hosts` file and create a response
 
 ## Cards
 Q: which file decides whether `/etc/hosts` is consulted before DNS?
