@@ -18,3 +18,6 @@ Concepts :
 - [[df vs du]] # why the two disagree, and what it tells you
 - [[ARG_MAX]] # the kernel cap on an argument list, why xargs batches
 - [[Network Layers]] # What are the networks layers and how linux interacts with them
+- [[Host header]] # how one address and port can serve several names
+- [[reverse proxy]] # what it is, and why it always loses the client address
+- [[configured state vs running state]] # validate, reload, then ask the service
