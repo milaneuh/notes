@@ -24,8 +24,6 @@ When none of the three is available, the original address exists only in the pro
 
 The page returned says nothing about which server sent it. A proxy serving a file left behind by another program looks exactly like that program. The answer is in the response headers, `Server` and any signature the application adds itself.
 
-*À compléter : le jour où j'ai cru qu'apache tournait encore.*
-
 ## Tooling
 
 - `curl -v <url>` : the `<` lines carry `Server` and the application's own signature headers

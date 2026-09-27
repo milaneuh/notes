@@ -21,7 +21,6 @@ The `Host` header is the only information that decision rests on. A request carr
 
 Two layers are at work and they are not interchangeable. The address and the port of the connection belong to the network and transport layers. The `Host` header lives in the application layer, inside the request itself. A device that only looks at the connection never sees the name, which is why a TCP relay cannot route by name.
 
-*À compléter : ce que je croyais avant de comprendre ça.*
 
 ## Tooling
 

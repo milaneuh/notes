@@ -16,8 +16,6 @@ A reload on a broken configuration is the worst case, because it leaves the prev
 
 `systemctl status` prints the last ten journal lines of the unit. For a service that has been running quietly for hours, those ten lines are the ones from **startup**. They can look like an ongoing failure while describing a moment long past. Check their timestamps against the `Active: since` line before believing them, and use `journalctl -u <unit> --since -10min` to see what is happening now.
 
-*À compléter : combien de temps j'ai perdu à cause de ça, les deux fois.*
-
 ## Tooling
 
 Validators, to run before every reload :

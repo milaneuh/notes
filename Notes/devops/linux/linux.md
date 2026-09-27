@@ -21,3 +21,4 @@ Concepts :
 - [[Host header]] # how one address and port can serve several names
 - [[reverse proxy]] # what it is, and why it always loses the client address
 - [[configured state vs running state]] # validate, reload, then ask the service
+- [[systemd-resolved]] # the local resolver, its stub, and which DNS setting wins
