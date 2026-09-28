@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devops/linux/kernel ring buffer.md",
+                "file": "devops/linux/tooling/ss.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "kernel ring buffer"
+              "title": "ss"
             }
           }
         ],
@@ -84,7 +84,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hold",
+                "query": "socket",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -217,6 +217,7 @@
   },
   "active": "31f37f5fcc4dc50a",
   "lastOpenFiles": [
+    "devops/linux/kernel ring buffer.md",
     "devops/linux/file system/hardlink limits.md",
     "devops/linux/file system/hardlink.md",
     "devops/linux/tooling/dmesg.md",
@@ -242,7 +243,6 @@
     "devops/linux/networking/nftables.md",
     "devops/linux/tooling/df vs du.md",
     "ARG_MAX.md",
-    "devops/linux/cgroups.md",
     "devops/linux/systemd",
     "devops/linux/file system",
     "devops/linux/tooling",

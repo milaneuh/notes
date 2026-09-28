@@ -11,7 +11,7 @@ ss -ltu
 Q: what does `ss -ltu` list?
 A: every listening TCP and UDP socket.
 
-Q: which option shows the process behind a socket, and what does it need?
+Q: With `ss`, which option shows the process behind a socket, and what does it need?
 A: `-p`, and root privileges to see sockets that do not belong to me.
 
 Q: why read `ss` before opening the service configuration?
