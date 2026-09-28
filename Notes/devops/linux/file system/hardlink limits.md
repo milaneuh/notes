@@ -41,5 +41,5 @@ A: an inode identifier only makes sense inside its own file system. The inode `1
 Q: `ln` fails with "Invalid cross-device link". Which limit did you hit?
 A: the second one, the two paths are on different file systems. The directory limit gives a different message, "hard link not allowed for directory".
 
-Q: what do you use when you hit one of the two limits?
+Q: for an hardlink what do you use when you hit one of it's limits?
 A: a symlink.

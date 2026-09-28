@@ -19,5 +19,5 @@ A: the [[kernel ring buffer]], the kernel's own message buffer.
 Q: when is dmesg the right instrument?
 A: hardware, drivers, the OOM killer, filesystem errors, and anything that happens before user-space logging starts.
 
-Q: why is a grep almost always needed with it?
+Q: why is a grep almost always needed with dmesg ?
 A: the buffer is very large, so the interesting line is drowned.

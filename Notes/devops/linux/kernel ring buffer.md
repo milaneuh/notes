@@ -6,5 +6,5 @@ It uses a circular design, meaning any new message will overwrite the oldest one
 Q: what happens to the oldest messages in the kernel ring buffer?
 A: they are overwritten. The buffer is a fixed size and circular, so an old event can simply be gone.
 
-Q: what does it hold that a user-space log cannot?
+Q: what does the kernel ring buffer hold that a user-space log cannot?
 A: boot events, device drivers and hardware warnings, recorded before user-space logging exists.
