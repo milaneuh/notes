@@ -31,7 +31,7 @@ strace -c command_here
 Q: what does strace show?
 A: the system calls a process makes, which is useful when the source is not available and the logs say nothing.
 
-Q: which invocation gives a summary instead of a stream?
+Q: which strace invocation gives a summary instead of a stream?
 A: `strace -c`, which counts the calls and the time spent per system call.
 
 Q: what is the risk of running strace on a service at rest?

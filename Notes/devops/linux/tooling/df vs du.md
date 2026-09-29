@@ -23,5 +23,5 @@ A: df reads the file system's block accounting, du scans every file and sub-fold
 Q: df says the file system is full, du reports far less usage. What is happening?
 A: a running process holds a deleted file open. df counts the blocks as used, du cannot see a file that has no name any more.
 
-Q: name a second reason df and du can disagree.
+Q: besides a deleted file held open, name another reason df and du can disagree.
 A: du reports the apparent file size or the actual space used per block of what it walks, while df tracks the overall partition blocks. Sparse files make the two diverge.

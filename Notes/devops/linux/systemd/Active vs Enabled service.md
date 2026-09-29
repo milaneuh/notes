@@ -17,5 +17,5 @@ A: an Enabled unit is configured to start when the system boots, a Disabled one 
 Q: can a unit be Active and Disabled at the same time?
 A: yes. A service can answer perfectly today and be gone after the next reboot.
 
-Q: are units only services?
+Q: are systemd units only services?
 A: no — there are around a dozen types: `service`, `timer`, `socket`, `mount`, `target`, `path`.

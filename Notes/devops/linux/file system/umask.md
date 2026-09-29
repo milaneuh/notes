@@ -52,5 +52,5 @@ A: `0640` for a file (from 0666), `0750` for a directory (from 0777).
 Q: umask 077 — what mode does a file get, and a directory?
 A: `0600` for a file, `0700` for a directory. Owner only.
 
-Q: why is "the mask is 7 minus what I want" wrong?
+Q: for a umask, why is "the mask is 7 minus what I want" wrong?
 A: it only works for directories, because they are the thing requested at `0777`. For files the request is `0666`, so the arithmetic breaks. Check with `ls -l` instead of trusting it.

@@ -29,5 +29,5 @@ A: it reaches a target and starts everything symlinked in that target's `.wants/
 Q: a unit has had `[Install]` in it since the beginning but the service does not start at boot. Why?
 A: the symlink does not exist. Without it `[Install]` does nothing, because systemd only reads that section at `enable` time.
 
-Q: what does the target of an enable symlink tell you?
+Q: what does the target of a systemd enable symlink tell you?
 A: where the unit came from. Packaged units point to `/usr/lib/systemd/system/`, yours point to `/etc/systemd/system/` — the distribution provides the definition, the administrator takes the decision.

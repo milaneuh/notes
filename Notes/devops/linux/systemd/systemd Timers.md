@@ -32,7 +32,7 @@ A: a unit whose name ends in .timer, with a `[Timer]` section, that controls a .
 Q: what are the two types of systemd timer?
 A: realtime timers, activated on a calendar event with `OnCalendar=`, and monotonic timers, activated after a time span relative to a varying starting point, with options of the form `OnTypeSec=`.
 
-Q: give two monotonic timer options.
+Q: give two systemd monotonic timer options.
 A: `OnBootSec` and `OnUnitActiveSec`.
 
 Q: you have a .timer and its matching .service. Which one do you enable?

@@ -45,5 +45,5 @@ A: the bare `;` is read by the shell as a command separator, so awk gets a `-F` 
 Q: how do you skip a csv header in awk?
 A: `NR == 1 {next}`, NR being the number of the current line. Matching the rest with `NR > 1 { ... }` does the same thing.
 
-Q: what is the `END` block for?
+Q: in awk, what is the `END` block for?
 A: it runs once after every line was processed, which is where you print what you accumulated, like `total/lines`.

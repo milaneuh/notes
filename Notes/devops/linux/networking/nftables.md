@@ -22,10 +22,10 @@ The ruleset in the kernel is runtime state, `/etc/nftables.conf` loaded by `nfta
 Q: during an incident, what is the only question the firewall answers?
 A: whether it is responsible for what I see. The default answer is no, and the burden of proof is on me.
 
-Q: a rule names my port. Is it guilty?
+Q: an nftables rule names my port. Is it guilty?
 A: not yet. I have to show it applies to my traffic: which interface, which direction, which address family, and whether an earlier rule already accepted the packet. `iifname != "lo" tcp dport 8080 drop` never meets a local test.
 
-Q: what is the empirical proof that a rule matched?
+Q: what is the empirical proof that an nftables rule matched?
 A: its counter, and only if the rule carries a `counter` statement. Reset, reproduce the failure, look again. Zero packet is a proof, not an opinion.
 
 Q: DROP and REJECT, how do I tell them apart from the client side?

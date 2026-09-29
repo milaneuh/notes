@@ -39,7 +39,7 @@ See [[Unit files are cached]], [[Diagnosing a systemd service]], [[name resoluti
 Q: a configuration file on disk and the running process, when do they agree?
 A: after a reload that succeeded. Before that they are two different sources of truth.
 
-Q: why is validating a file not enough?
+Q: why is validating a configuration file not enough?
 A: a validator reads the file on disk. It says nothing about what the running process currently holds in memory.
 
 Q: what happens when you reload a service whose configuration is broken?

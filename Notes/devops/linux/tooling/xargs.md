@@ -40,10 +40,10 @@ A: the kernel caps the length of an argument list (`getconf ARG_MAX`). xargs spl
 Q: what breaks `find . | xargs cmd` ?
 A: xargs splits on blanks, so a filename containing a space becomes two arguments.
 
-Q: what is the safe form when you pipe filenames?
+Q: with xargs, what is the safe form when you pipe filenames?
 A: `find . -print0 | xargs -0 cmd`. NUL is the only byte that cannot appear in a filename.
 
-Q: how do you place the argument somewhere other than the end?
+Q: in an xargs command, how do you place the argument somewhere other than the end?
 A: `-I {}`. It forces one execution per argument, so you lose the batching.
 
 Q: which xargs option a `for` loop cannot replace?
