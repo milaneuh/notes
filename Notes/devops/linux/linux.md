@@ -22,3 +22,6 @@ Concepts :
 - [[reverse proxy]] # what it is, and why it always loses the client address
 - [[configured state vs running state]] # validate, reload, then ask the service
 - [[systemd-resolved]] # the local resolver, its stub, and which DNS setting wins
+- [[Certificates]] # a signed claim binding a public key to a name
+- [[X.509]] # the certificate format, its ASN.1 structure and its OIDs
+- [[Public Key Infrastructure]] # the practices around issuing and trusting certificates
