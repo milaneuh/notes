@@ -10,4 +10,4 @@ It is built on top of _ASN.1_ (Abstract Syntax Notation One), it defines the dat
 
 OID 2.5.4.3 (DN component CommonName)= GlobalSign Root R46
 
-See [[Certificates]], [[Public Key Infrastructure]]
+See [[Certificates]], [[Public Key Infrastructure]], [[Subject Alternative Name]]

@@ -25,3 +25,4 @@ Concepts :
 - [[Certificates]] # a signed claim binding a public key to a name
 - [[X.509]] # the certificate format, its ASN.1 structure and its OIDs
 - [[Public Key Infrastructure]] # the practices around issuing and trusting certificates
+- [[Subject Alternative Name]] # the field that decides whether a name is covered by a certificate

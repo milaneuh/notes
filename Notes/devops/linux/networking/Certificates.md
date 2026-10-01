@@ -98,4 +98,4 @@ Certificate:
         08:f7:40:45:31:78:2a:7a
 ```
 
-See [[X.509]], [[Public Key Infrastructure]]
+See [[X.509]], [[Public Key Infrastructure]], [[Subject Alternative Name]]
