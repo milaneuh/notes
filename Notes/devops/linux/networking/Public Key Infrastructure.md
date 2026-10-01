@@ -8,5 +8,8 @@ It's sometime called "Internet PKI", they defines what a name is and where it go
 They are very important because they work by default with browsers and everything else that uses [[TLS]]
 
 2. Internal PKI
+You use Internal PKI for services, [[Containers|container]], VMS, hardware,and any other code you need to identify. Contrary to Web PKI, it gives you complete control over details like certificate lifetime, revocation mechanism, renewal processes, key types and algorithms. 
+
+Also, Web PKI can not bind to internal IPs, or internal DNS names that are not resolved in public global DNS. 
 
 See [[Certificates]], [[X.509]]
