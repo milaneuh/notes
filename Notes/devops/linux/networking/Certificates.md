@@ -99,3 +99,25 @@ Certificate:
 ```
 
 See [[X.509]], [[Public Key Infrastructure]], [[Subject Alternative Name]]
+
+## Cards
+Q: what does a certificate contain, and what does the signature add to it?
+A: a public key and a name. The signature binds the two, and it is made by the issuer.
+
+Q: Milan signs a certificate for John. Who is the issuer and who is the subject?
+A: Milan is the issuer, he signs. John is the subject, he is the one named.
+
+Q: what does a certificate let you do that you could not do without one?
+A: trust one issuer's public key in order to learn another entity's public key.
+
+Q: a certificate's Issuer and Subject fields are identical. What does that tell you?
+A: it signed itself, so it is a root.
+
+Q: an extension is marked `critical`. What must a client do with it?
+A: reject the certificate if it cannot understand that extension.
+
+Q: which Key Usage value makes a key a CA key, and which other field has to agree with it?
+A: Certificate Sign, paired with CA:TRUE in Basic Constraints.
+
+Q: a certificate carries a Subject Key Identifier and no Authority Key Identifier. What does the absence suggest?
+A: there is no separate issuer key to point at, which fits a self-signed root.

@@ -38,6 +38,7 @@ When the client tries to correlate a CN when a SAN is present in the certificate
 A root certification authority carries a `Subject` and no SAN at all. The GlobalSign root dumped in [[Certificates]] shows it.
 
 The `Issuer` field identifies the entity that has signed and issued the ceriticate.
+
 > [!todo] à écrire : les deux rôles. Le `Subject` d'une autorité est recopié tel quel dans le champ `Issuer` des certificats qu'elle signe, et c'est cette égalité qui chaîne. Le SAN ne sert qu'à valider le nom demandé. Expliquer pourquoi un certificat serveur au `Subject` vide fonctionne quand même.
 
 ## Where the SAN goes missing
