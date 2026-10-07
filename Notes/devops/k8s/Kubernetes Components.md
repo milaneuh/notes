@@ -27,7 +27,7 @@ Runs on every [[Nodes]], maintaining running [[Pods]] and providing runtime envi
 Check if pods are running, including the underlying containers
 
 - [[kube-proxy]] (optional)
-Maintains network rules on nodes to implements [[Services]]
+Maintains network rules on nodes to implements [[Kubernetes Services]]
 
 - [[Container Runtime]]
 Software responsible for running [[Containers]] 
