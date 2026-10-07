@@ -29,8 +29,13 @@ A: subtracts. The result is `requested & ~umask`; it never adds a bit the progra
 
 Rules:
 
-- Format is exact: `Q:` line, then `A:` which may span multiple lines until the
-  next `Q:` or the end of the block. The sync script's parser depends on this.
+- Format is exact: `Q:` then `A:`, each may span multiple lines, until the next
+  `Q:` or the end of the block. The sync script's parser depends on this.
+- Images are allowed on either side: `![[Pasted image 2026....png]]` (the
+  attachment is found anywhere under `Notes/`) or `![alt](https://...)`. They
+  get uploaded to Anki's media folder. Reuse the note's own image rather than
+  describing it in words.
+- Line breaks and `inline code` survive into the card; other markdown does not.
 - **The question is the identity.** Re-running the skill on a note matches
   existing cards by question text. Reuse a question verbatim to update its
   answer; change the wording and you get a duplicate card instead.
