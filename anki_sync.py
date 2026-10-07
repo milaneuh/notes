@@ -6,6 +6,11 @@ Card format, anywhere under a `## Cards` heading in a .md file:
     ## Cards
     Q: what does umask do?
     A: subtracts permission bits from what the program requests.
+       ![[diagram.png]]
+
+Q and A may both span several lines, and may embed images as `![[file.png]]`
+(Obsidian attachment, found anywhere under Notes/) or `![alt](url)`. Images are
+uploaded to Anki's media folder; line breaks and `code` are kept.
 
 Re-running is idempotent: same question -> updated answer, new question -> new card.
 Requires Anki running with the AnkiConnect add-on (code 2055492159).
@@ -41,6 +46,33 @@ def parse(md):
             yield q.strip(), a.strip()
 
 
+IMG = re.compile(r"!\[\[([^\]]+)\]\]|!\[[^\]]*\]\(([^)]+)\)")
+CODE = re.compile(r"`([^`]+)`")
+
+
+def media(ref):
+    """Store an image in Anki's media folder, return its filename."""
+    if ref.startswith(("http://", "https://")):
+        name = ref.rsplit("/", 1)[-1]
+        anki("storeMediaFile", filename=name, url=ref, deleteExisting=False)
+        return name
+    hit = next(ROOT.rglob(ref), None)
+    if hit is None:
+        return None
+    anki("storeMediaFile", filename=hit.name, path=str(hit.resolve()), deleteExisting=False)
+    return hit.name
+
+
+def render(text):
+    """Markdown subset -> Anki field HTML: images, inline code, line breaks."""
+    def img(m):
+        name = media(m.group(1) or m.group(2))
+        return f'<img src="{name}">' if name else m.group(0)
+    text = IMG.sub(img, text)
+    text = CODE.sub(r"<code>\1</code>", text)
+    return text.replace("\n", "<br>")
+
+
 def esc(s):
     return s.replace('"', '\\"')
 
@@ -55,6 +87,7 @@ def main():
     for path in sorted(ROOT.rglob("*.md")):
         tag = path.parent.name
         for q, a in parse(path.read_text()):
+            q, a = render(q), render(a)
             existing = anki("findNotes", query=f'deck:{DECK} "front:{esc(q)}"')
             if existing:
                 anki("updateNoteFields", note={"id": existing[0], "fields": {"Back": a}})
@@ -75,6 +108,13 @@ def test():
     md = "intro\n## Cards\nQ: a?\nA: one\nline two\n\nQ: b?\nA: two\n\n## Other\nQ: no\n"
     assert list(parse(md)) == [("a?", "one\nline two"), ("b?", "two")], list(parse(md))
     assert list(parse("no cards here")) == []
+
+    global media
+    media = lambda ref: ref.rsplit("/", 1)[-1]
+    assert render("a\nb") == "a<br>b"
+    assert render("use `ls`") == "use <code>ls</code>"
+    assert render("![[x.png]]") == '<img src="x.png">'
+    assert render("![d](http://h/y.png)") == '<img src="y.png">'
     print("ok")
 
 
