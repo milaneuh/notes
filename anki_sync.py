@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
-"""Push `## Cards` blocks from the notes into Anki via AnkiConnect.
+"""Push the notes into Anki via AnkiConnect, one note = one card.
 
-Card format, anywhere under a `## Cards` heading in a .md file:
+The vault is flat Zettelkasten: every .md under Notes/ holds a single idea and
+its title is a statement, not a question. The title becomes the card front, the
+body the card back, minus the trailing `See [[...]]` block, which is navigation
+for Obsidian and noise on a flashcard.
 
-    ## Cards
-    Q: what does umask do?
-    A: subtracts permission bits from what the program requests.
-       ![[diagram.png]]
+    Notes/A Pod shares the network namespace between its containers.md
+    ---
+    tags: [k8s]
+    ---
+    They see the same IP and talk over `localhost`. See [[Pods are the ...]]
 
-Q and A may both span several lines, and may embed images as `![[file.png]]`
-(Obsidian attachment, found anywhere under Notes/) or `![alt](url)`. Images are
-uploaded to Anki's media folder; line breaks and `code` are kept.
+Frontmatter is stripped; `tags:` becomes the Anki tags. Only the notes at the
+top level of Notes/ are cards: anything in a sub-directory is reference material
+and is left alone.
 
-Re-running is idempotent: same question -> updated answer, new question -> new card.
+Images embed as `![[file.png]]` (found anywhere under Notes/) or `![alt](url)`;
+line breaks, `code` and code blocks are kept, `[[wikilinks]]` become plain text.
+
+Re-running is idempotent: same title -> updated back, new title -> new card.
+Renaming a note makes a new card, the old one stays in Anki.
 Requires Anki running with the AnkiConnect add-on (code 2055492159).
 """
 import json
@@ -26,8 +34,9 @@ ROOT = Path(__file__).parent / "Notes"
 DECK = "Notes"
 URL = "http://127.0.0.1:8765"
 
-CARDS_BLOCK = re.compile(r"^## Cards\s*$(.*?)(?=^## |\Z)", re.M | re.S)
-QA = re.compile(r"^Q:\s*(.+?)\s*^A:\s*(.+?)(?=^Q:|\Z)", re.M | re.S)
+FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.S)
+TAGS = re.compile(r"^tags:\s*\[(.*?)\]\s*$", re.M)
+SEE = re.compile(r"\n\s*\nSee .*\Z", re.S)  # trailing link block, for Obsidian only
 
 
 def anki(action, **params):
@@ -40,14 +49,18 @@ def anki(action, **params):
 
 
 def parse(md):
-    """Yield (question, answer) from every `## Cards` block in a note."""
-    for block in CARDS_BLOCK.findall(md):
-        for q, a in QA.findall(block):
-            yield q.strip(), a.strip()
+    """(tags, body) of a note."""
+    m = FRONTMATTER.match(md)
+    meta, body = (m.group(1), md[m.end():]) if m else ("", md)
+    t = TAGS.search(meta)
+    tags = [x.strip() for x in t.group(1).split(",") if x.strip()] if t else []
+    return tags, SEE.sub("", body.strip()).strip()
 
 
 IMG = re.compile(r"!\[\[([^\]]+)\]\]|!\[[^\]]*\]\(([^)]+)\)")
+BLOCK = re.compile(r"^```[^\n]*\n(.*?)^```\s*$", re.M | re.S)
 CODE = re.compile(r"`([^`]+)`")
+LINK = re.compile(r"(?<!!)\[\[([^\]|:]+)(?:\|([^\]]+))?\]\]")  # not [[:space:]]
 
 
 def media(ref):
@@ -64,13 +77,19 @@ def media(ref):
 
 
 def render(text):
-    """Markdown subset -> Anki field HTML: images, inline code, line breaks."""
+    """Markdown subset -> Anki field HTML."""
     def img(m):
         name = media(m.group(1) or m.group(2))
         return f'<img src="{name}">' if name else m.group(0)
     text = IMG.sub(img, text)
+    text = LINK.sub(lambda m: m.group(2) or m.group(1), text)
+    text = BLOCK.sub(lambda m: f"<pre>{m.group(1).rstrip()}</pre>", text)
     text = CODE.sub(r"<code>\1</code>", text)
-    return text.replace("\n", "<br>")
+    # <pre> keeps its own newlines, everything else needs <br>
+    return "".join(
+        p if i % 2 else p.replace("\n", "<br>")
+        for i, p in enumerate(re.split(r"(<pre>.*?</pre>)", text, flags=re.S))
+    )
 
 
 def esc(s):
@@ -84,30 +103,30 @@ def main():
         sys.exit("Anki not reachable on 8765. Start Anki (AnkiConnect add-on 2055492159).")
 
     added = updated = 0
-    for path in sorted(ROOT.rglob("*.md")):
-        tag = path.parent.name
-        for q, a in parse(path.read_text()):
-            q, a = render(q), render(a)
-            existing = anki("findNotes", query=f'deck:{DECK} "front:{esc(q)}"')
-            if existing:
-                anki("updateNoteFields", note={"id": existing[0], "fields": {"Back": a}})
-                updated += 1
-            else:
-                anki("addNote", note={
-                    "deckName": DECK,
-                    "modelName": "Basic",
-                    "fields": {"Front": q, "Back": a},
-                    "tags": [tag],
-                    "options": {"allowDuplicate": False},
-                })
-                added += 1
+    for path in sorted(ROOT.glob("*.md")):
+        tags, body = parse(path.read_text())
+        front, back = path.stem, render(body)
+        existing = anki("findNotes", query=f'deck:{DECK} "front:{esc(front)}"')
+        if existing:
+            anki("updateNoteFields", note={"id": existing[0], "fields": {"Back": back}})
+            anki("addTags", notes=existing, tags=" ".join(tags)) if tags else None
+            updated += 1
+        else:
+            anki("addNote", note={
+                "deckName": DECK,
+                "modelName": "Basic",
+                "fields": {"Front": front, "Back": back},
+                "tags": tags,
+                "options": {"allowDuplicate": False},
+            })
+            added += 1
     print(f"{added} added, {updated} updated")
 
 
 def test():
-    md = "intro\n## Cards\nQ: a?\nA: one\nline two\n\nQ: b?\nA: two\n\n## Other\nQ: no\n"
-    assert list(parse(md)) == [("a?", "one\nline two"), ("b?", "two")], list(parse(md))
-    assert list(parse("no cards here")) == []
+    assert parse("---\ntags: [a, b]\n---\nbody\n") == (["a", "b"], "body")
+    assert parse("plain body") == ([], "plain body")
+    assert parse("claim\n\nSee [[a]], [[b]]\n") == ([], "claim")
 
     global media
     media = lambda ref: ref.rsplit("/", 1)[-1]
@@ -115,6 +134,9 @@ def test():
     assert render("use `ls`") == "use <code>ls</code>"
     assert render("![[x.png]]") == '<img src="x.png">'
     assert render("![d](http://h/y.png)") == '<img src="y.png">'
+    assert render("see [[a note]] and [[x|y]]") == "see a note and y"
+    assert render("sed 's/[[:space:]]//'") == "sed 's/[[:space:]]//'"
+    assert render("x\n```sh\nls\ncd\n```") == "x<br><pre>ls\ncd</pre>"
     print("ok")
 
 

@@ -1,63 +1,64 @@
 ---
 name: anki-cards
-description: Write Anki flashcards into notes as `## Cards` blocks, then sync them to Anki. Use when the user asks to generate, add, or refresh flashcards / Anki cards from their notes, or names a note or folder to make cards for.
+description: Write notes in this flat Zettelkasten vault as atomic Anki cards (title = front, body = back), then sync them to Anki. Use when the user asks to add or refresh notes / flashcards / Anki cards, or names a subject to make notes for.
 ---
 
-# Anki cards from notes
+# Notes are the cards
 
-Two steps: append a `## Cards` block to the note(s), then run `anki_sync.py`.
+The vault is flat: every `.md` lives directly in `Notes/`. One note holds one
+idea, and **the note itself is the card** — the filename is the front, the body
+is the back. There are no `## Cards` blocks and no index notes; links between
+notes are the only structure.
 
-## 1. Pick the notes
+Sub-directories of `Notes/` (e.g. `Notes/KBRW/`) hold reference material, not
+cards. The sync skips them.
 
-- User named notes or a folder → use those.
-- User said "my notes" with no target → ask which folder, don't do all 38.
-- Skip index/hub notes (a note whose body is mostly `[[links]]` with one-line
-  descriptions). They have no content to test, only structure.
+## 1. Write atomic notes
 
-Read each note fully before writing cards for it.
+The title is a **statement, not a question, not a topic**:
 
-## 2. Write the cards
+- `Unit files are cached until daemon-reload.md` — good, it's the claim itself.
+- `What does daemon-reload do?.md` — no, that's a flashcard question.
+- `systemd.md` — no, that's a topic. Split it into the claims it contains.
 
-Append to the end of the note, keeping any existing `## Cards` block and adding
-to it rather than replacing it:
+Body: 1–5 lines answering "why / how", plus code if the note is about a
+command. If the body needs an "and" between two unrelated facts, it's two
+notes. Keep the user's own wording and code formatting.
 
 ```markdown
-## Cards
-Q: what does umask do to a requested mode?
-A: subtracts. The result is `requested & ~umask`; it never adds a bit the program didn't ask for.
+---
+tags: [systemd]
+---
+systemd reads unit files into memory at boot. Editing a file on disk changes
+nothing until `systemctl daemon-reload` re-reads it.
+
+See [[A unit file describes one service to systemd]]
 ```
 
 Rules:
 
-- Format is exact: `Q:` then `A:`, each may span multiple lines, until the next
-  `Q:` or the end of the block. The sync script's parser depends on this.
-- Images are allowed on either side: `![[Pasted image 2026....png]]` (the
-  attachment is found anywhere under `Notes/`) or `![alt](https://...)`. They
-  get uploaded to Anki's media folder. Reuse the note's own image rather than
-  describing it in words.
-- Line breaks and `inline code` survive into the card; other markdown does not.
-- **The question is the identity.** Re-running the skill on a note matches
-  existing cards by question text. Reuse a question verbatim to update its
-  answer; change the wording and you get a duplicate card instead.
-- 3–6 cards per note. A note that yields more is really several notes.
-- One fact per card. If the answer needs "and", it's two cards.
-- Test understanding, not recall of phrasing. `Q: why does editing a unit file
-  not take effect?` beats `Q: what does the note say about caching?`.
-- Tables and lists in a note are usually one card per row, not one card for the
-  whole table.
-- Keep the note's own wording and code formatting in the answer. The user wrote
-  it that way on purpose.
-- Skip anything already covered by an existing card in that note.
+- Filenames are the identity. Reuse a title verbatim to update its card;
+  rename it and you get a new card (the old one stays in Anki).
+- Link liberally with `[[Other note title]]` — in a flat vault links are the
+  only structure. Put them in a trailing `See [[...]]` block: the sync strips
+  that block, so links stay in Obsidian and never reach the card. A link inside
+  the body itself renders as plain text on the card.
+- `tags:` in frontmatter become the Anki tags. Use the subject (`k8s`, `linux`,
+  `systemd`, `kbrw`).
+- Images work on either side: `![[Pasted image ....png]]` or `![alt](https://...)`.
+- Line breaks, `inline code` and fenced code blocks survive into the card;
+  other markdown does not.
+- Before writing, grep the vault for a note that already states the idea and
+  extend it instead of adding a near-duplicate.
+- No em dashes. Use a colon, a comma or a full stop.
 
-## 3. Sync
+## 2. Sync
 
 ```bash
 python3 anki_sync.py
 ```
 
-Prints `N added, M updated`. Requires Anki running with the AnkiConnect add-on
-(code 2055492159); the script exits with that message if it can't reach it.
-If Anki isn't running, say so and tell the user the cards are in the notes and
-will sync on the next run — don't treat it as a failure.
-
-Cards are tagged with their parent folder name (`devops`, `KBRW`).
+Prints `N added, M updated`. Requires Anki running with the
+AnkiConnect add-on (code 2055492159); the script exits with that message if it
+can't reach it. If Anki isn't running, say so — the notes are written and will
+sync on the next run, that's not a failure.
