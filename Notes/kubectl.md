@@ -1,12 +1,16 @@
-## Cards
-Q: What is kubectl ?
-A: Kubectl is the CLI client of the Kbernetes API server. Every kubectl command is just a wrapper for an endpoint of this webservice 
+---
+tags: [k8s]
+---
+The CLI client of the Kubernetes API server: every command is a wrapper over
+one endpoint of that webservice.
 
-Q: What's the grammar of the kubectl command
-A: The grammar is always `kubectl <verb> <ressource type> [name] [options]`. The verbs are few (`get`, `create`, `delete`, `describe`), and the ressource types are the nouns of k8s ([[Nodes|nodes]], [[Pods|pods]], [[Deployments|deployments]] ). 
+The grammar is always `kubectl <verb> <resource type> [name] [options]`. The
+verbs are few, `get`, `create`, `delete`, `describe`, and the resource types
+are the nouns of k8s: nodes, pods, deployments.
 
-Q: With kubectl, how do you get infos regarding the cluster and it's Internal DNS
-A:  `kubectl cluster-infos`
+```bash
+kubectl cluster-info    # the cluster and its internal DNS
+kubectl get nodes       # the machines in the cluster
+```
 
-Q: With kubectl, how do you list the machines inside the cluster
-A: `kubectl get nodes`
+See [[Kubernetes components]]
