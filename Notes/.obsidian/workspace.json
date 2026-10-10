@@ -184,6 +184,9 @@
   },
   "active": "c1dace5f5a5bc350",
   "lastOpenFiles": [
+    "k8s deployments stays at step 0.md",
+    "k8s deployement stays at 0/1.md",
+    "k8s deployement stays at 0",
     "link between deployments service and endpoints.md",
     "service selector.md",
     "kindnet.md",
@@ -208,8 +211,6 @@
     "root is not a permission class.md",
     "reverse proxy.md",
     "openssl ca.md",
-    "nftables.md",
-    "mount point.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
