@@ -1,3 +1,6 @@
+---
+tags: [k8s, networking]
+---
 The [[deployment]] will create the [[pods]] with the label `app=nginx`
 The [[service]] will select pods who who have the same label.
 The endpoints will show the pods hit by the service

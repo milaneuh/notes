@@ -1,3 +1,6 @@
+---
+tags: [k8s]
+---
 When you run the [[kubectl]] apply command, this is how it traverse the [[kubernetes]] architecture :
 
 ![[kubectl-apply-lifecycle.svg]]

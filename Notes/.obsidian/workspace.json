@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "486f4d2beefac84c",
+        "id": "a7defd5e7c795a88",
         "type": "tabs",
         "children": [
           {
-            "id": "c1dace5f5a5bc350",
+            "id": "d0fb8a9376719257",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "kubectl",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,8 +182,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "c1dace5f5a5bc350",
+  "active": "d0fb8a9376719257",
   "lastOpenFiles": [
+    "main cni plugins.md",
+    "the three rules of a k8s netowrk.md",
+    "Kubernetes components.md",
     "kubectl-apply-lifecycle.svg",
     "kubectl apply lifecyle.md",
     "k8s deployments stays at step 0.md",
@@ -209,8 +212,6 @@
     "strace.md",
     "ss.md",
     "sed.md",
-    "runuser.md",
-    "root is not a permission class.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
