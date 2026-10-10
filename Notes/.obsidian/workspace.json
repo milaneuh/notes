@@ -184,6 +184,7 @@
   },
   "active": "c1dace5f5a5bc350",
   "lastOpenFiles": [
+    "link between deployments service and endpoints.md",
     "service selector.md",
     "kindnet.md",
     "etcd.md",
@@ -209,7 +210,6 @@
     "openssl ca.md",
     "nftables.md",
     "mount point.md",
-    "lsof.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
