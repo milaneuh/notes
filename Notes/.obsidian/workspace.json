@@ -184,6 +184,8 @@
   },
   "active": "9d11feb6f0478107",
   "lastOpenFiles": [
+    "kubelet.md",
+    "Kubernetes Worker Nodes.md",
     "main cni plugins.md",
     "the three rules of a k8s netowrk.md",
     "Kubernetes components.md",
@@ -210,8 +212,6 @@
     "symlink.md",
     "subnet.md",
     "strace.md",
-    "ss.md",
-    "sed.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",

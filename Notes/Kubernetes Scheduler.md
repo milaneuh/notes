@@ -2,7 +2,7 @@
 tags: [k8s]
 ---
 
-The `kube-scheduler` decides where to deploy each [[pods]]]. It analyses the pod's requirements and then find an adequate [[Kubernetes Nodes]].
+The `kube-scheduler` decides where to deploy each [[pods]]]. It analyses the pod's requirements and then find an adequate [[Kubernetes Worker Nodes]].
 This process is in two steps :
 
 1. Filter the inelegible nodes
