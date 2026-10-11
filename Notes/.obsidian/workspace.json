@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#k8s",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,7 +182,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "d0fb8a9376719257",
+  "active": "9d11feb6f0478107",
   "lastOpenFiles": [
     "main cni plugins.md",
     "the three rules of a k8s netowrk.md",
