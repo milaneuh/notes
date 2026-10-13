@@ -184,6 +184,7 @@
   },
   "active": "9d11feb6f0478107",
   "lastOpenFiles": [
+    "Pods lifecyle.md",
     "kubelet.md",
     "Kubernetes Worker Nodes.md",
     "main cni plugins.md",
@@ -211,7 +212,6 @@
     "systemd StateDirectory.md",
     "symlink.md",
     "subnet.md",
-    "strace.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
