@@ -184,6 +184,7 @@
   },
   "active": "9d11feb6f0478107",
   "lastOpenFiles": [
+    "Replicas Set.md",
     "Pods lifecyle.md",
     "kubelet.md",
     "Kubernetes Worker Nodes.md",
@@ -211,7 +212,6 @@
     "systemd Timers.md",
     "systemd StateDirectory.md",
     "symlink.md",
-    "subnet.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
