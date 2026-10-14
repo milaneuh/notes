@@ -184,6 +184,8 @@
   },
   "active": "9d11feb6f0478107",
   "lastOpenFiles": [
+    "6 steps to trigger an update or rollback it.md",
+    "6 steps to trigger an update or rollback it",
     "Replicas Set.md",
     "Pods lifecyle.md",
     "kubelet.md",
@@ -211,7 +213,6 @@
     "systemd Type.md",
     "systemd Timers.md",
     "systemd StateDirectory.md",
-    "symlink.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
