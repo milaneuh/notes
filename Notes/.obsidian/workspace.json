@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a7defd5e7c795a88",
+        "id": "c7cb6da8a40492e9",
         "type": "tabs",
         "children": [
           {
-            "id": "d0fb8a9376719257",
+            "id": "429321e8e906f9f7",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#k8s",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,7 +182,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "9d11feb6f0478107",
+  "active": "429321e8e906f9f7",
   "lastOpenFiles": [
     "6 steps to trigger an update or rollback it.md",
     "6 steps to trigger an update or rollback it",
