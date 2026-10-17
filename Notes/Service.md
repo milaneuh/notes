@@ -12,4 +12,4 @@ gets a dedicated address reachable from outside.
 kubectl get services -A
 ```
 
-See [[Kubernetes cluster]], [[Pods]]
+See [[Kubernetes cluster]], [[Pods]], [[Kubernetes Service Type]]

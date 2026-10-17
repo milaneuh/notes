@@ -184,6 +184,7 @@
   },
   "active": "429321e8e906f9f7",
   "lastOpenFiles": [
+    "Kubernetes Service Type.md",
     "6 steps to trigger an update or rollback it.md",
     "6 steps to trigger an update or rollback it",
     "Replicas Set.md",
@@ -212,7 +213,6 @@
     "systemd exit codes.md",
     "systemd Type.md",
     "systemd Timers.md",
-    "systemd StateDirectory.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
