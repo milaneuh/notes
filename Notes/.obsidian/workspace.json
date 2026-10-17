@@ -184,6 +184,8 @@
   },
   "active": "429321e8e906f9f7",
   "lastOpenFiles": [
+    "What can't the Kubernetes Service do.md",
+    "What can't the Kubernetes Service do ?.md",
     "Difference between a Kubernetes Service and Ingress.md",
     "Difference between a Kubernetes Service and Ingress",
     "Kubernetes Service Type.md",
@@ -212,8 +214,6 @@
     "umask.md",
     "systemd.md",
     "systemd-resolved.md",
-    "systemd exit codes.md",
-    "systemd Type.md",
     "cluster-demo.png",
     "Pasted image 20260915161050.png",
     "devops/linux/systemd",
